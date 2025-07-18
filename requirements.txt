@@ -1,0 +1,10 @@
+google-generativeai
+PyPDF2
+python-dotenv
+flask
+requests
+pdfplumber
+twilio
+ngrok
+vapi-python
+websockets

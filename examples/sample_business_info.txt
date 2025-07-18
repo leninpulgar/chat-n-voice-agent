@@ -1,0 +1,72 @@
+SAMPLE BUSINESS INFORMATION
+==========================
+
+Business Name: TechSolutions Pro
+Address: 123 Innovation Street, Tech City, TC 12345
+Phone: (555) 123-4567
+Email: info@techsolutionspro.com
+Website: www.techsolutionspro.com
+
+BUSINESS HOURS:
+- Monday - Friday: 9:00 AM - 6:00 PM
+- Saturday: 10:00 AM - 4:00 PM
+- Sunday: Closed
+
+SERVICES OFFERED:
+1. Web Development
+   - Custom website design and development
+   - E-commerce solutions
+   - Content management systems
+   - Mobile-responsive design
+
+2. Software Development
+   - Custom software applications
+   - API development and integration
+   - Database design and management
+   - System maintenance and support
+
+3. IT Consulting
+   - Technology strategy planning
+   - System architecture design
+   - Digital transformation consulting
+   - Security audits and recommendations
+
+4. Cloud Services
+   - Cloud migration services
+   - Cloud infrastructure setup
+   - Backup and disaster recovery
+   - 24/7 monitoring and support
+
+PRICING:
+- Web Development: Starting at $2,500
+- Software Development: $100-150 per hour
+- IT Consulting: $150 per hour
+- Cloud Services: Custom pricing based on requirements
+
+POLICIES:
+- Payment terms: 50% upfront, 50% upon completion
+- Warranty: 90 days on all development work
+- Support: 30 days free support included
+- Refund policy: Refunds available within 7 days of project start
+
+CONTACT INFORMATION:
+- General inquiries: info@techsolutionspro.com
+- Sales: sales@techsolutionspro.com
+- Support: support@techsolutionspro.com
+- Emergency support: Available 24/7 for premium clients
+
+ABOUT US:
+TechSolutions Pro is a leading technology company specializing in web development, software solutions, and IT consulting. With over 10 years of experience, we help businesses transform their digital presence and optimize their technology infrastructure.
+
+Our team of expert developers and consultants work closely with clients to deliver innovative solutions that drive growth and efficiency. We pride ourselves on delivering high-quality work on time and within budget.
+
+CERTIFICATIONS:
+- ISO 9001:2015 Quality Management
+- CompTIA Security+
+- AWS Certified Solutions Architect
+- Microsoft Certified Azure Solutions Expert
+
+TESTIMONIALS:
+"TechSolutions Pro transformed our business with their exceptional web development services. Professional, reliable, and innovative!" - John Smith, CEO of ABC Corp
+
+"Their cloud migration service saved us thousands in operational costs. Highly recommend!" - Sarah Johnson, CTO of XYZ Inc.
