@@ -14,7 +14,7 @@ class VAPIIntegration:
     
     def __init__(self):
         """Initialize VAPI integration."""
-        load_dotenv()
+        load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', '.env'))
         
         self.api_key = os.getenv('VAPI_API_KEY')
         self.base_url = "https://api.vapi.ai"
@@ -29,6 +29,46 @@ class VAPIIntegration:
         
         logger.info("VAPI integration initialized")
     
+    def _get_voice_config(self) -> Dict[str, Any]:
+        """
+        Get voice configuration from environment variables or use defaults.
+        
+        Returns:
+            Dict[str, Any]: Voice configuration
+        """
+        provider = os.getenv('VAPI_VOICE_PROVIDER', '11labs').lower()
+        
+        if provider == '11labs' or provider == 'elevenlabs':
+            return {
+                "provider": "11labs",
+                "voiceId": os.getenv('VAPI_VOICE_ID', '21m00Tcm4TlvDq8ikWAM'),  # Default: Rachel
+                "stability": float(os.getenv('VAPI_VOICE_STABILITY', '0.5')),
+                "similarityBoost": float(os.getenv('VAPI_VOICE_SIMILARITY_BOOST', '0.8'))
+            }
+        elif provider == 'openai':
+            return {
+                "provider": "openai",
+                "voice": os.getenv('VAPI_VOICE_ID', 'alloy')  # Options: alloy, echo, fable, onyx, nova, shimmer
+            }
+        elif provider == 'azure':
+            return {
+                "provider": "azure",
+                "voice": os.getenv('VAPI_VOICE_ID', 'en-US-JennyNeural')
+            }
+        elif provider == 'playht':
+            return {
+                "provider": "playht",
+                "voice": os.getenv('VAPI_VOICE_ID', 'jennifer')
+            }
+        else:
+            # Fallback to 11labs default
+            return {
+                "provider": "11labs",
+                "voiceId": "21m00Tcm4TlvDq8ikWAM",
+                "stability": 0.5,
+                "similarityBoost": 0.8
+            }
+
     def create_assistant(self, business_context: str, business_name: str = "Business Assistant") -> Dict[str, Any]:
         """
         Create a VAPI assistant with business context.
@@ -71,12 +111,7 @@ Please provide helpful responses to customer inquiries about the business."""
                     }
                 ]
             },
-            "voice": {
-                "provider": "11labs",
-                "voiceId": "21m00Tcm4TlvDq8ikWAM",  # Default voice, can be customized
-                "stability": 0.5,
-                "similarityBoost": 0.8
-            },
+            "voice": self._get_voice_config(),
             "firstMessage": f"Hello! I'm your {business_name} assistant. How can I help you today?",
             "recordingEnabled": False,
             "silenceTimeoutSeconds": 30,

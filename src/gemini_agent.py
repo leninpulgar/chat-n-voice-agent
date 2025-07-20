@@ -41,8 +41,8 @@ class GeminiAgent:
         Args:
             model_name (str): Name of the Gemini model to use
         """
-        # Load environment variables
-        load_dotenv()
+        # Load environment variables from config folder
+        load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', '.env'))
         
         # Configure Gemini
         api_key = os.getenv('GEMINI_API_KEY')

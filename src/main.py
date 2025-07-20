@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 # Environment settings
-PDF_PATH = os.getenv("PDF_PATH", "business_info.pdf")  # Default PDF file
+PDF_PATH = os.getenv("PDF_PATH", os.path.join(os.path.dirname(os.path.dirname(__file__)), 'examples', 'business_info.pdf'))  # Default PDF file
 BUSINESS_NAME = os.getenv("BUSINESS_NAME", "TechSolutions Pro")
 
 # Initialize components

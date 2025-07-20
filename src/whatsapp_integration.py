@@ -13,7 +13,7 @@ class WhatsAppBot:
     
     def __init__(self):
         """Initialize the WhatsApp bot with Twilio credentials."""
-        load_dotenv()
+        load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', '.env'))
         
         # Get Twilio credentials from environment
         self.account_sid = os.getenv('TWILIO_ACCOUNT_SID')

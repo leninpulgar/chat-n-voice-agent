@@ -1,5 +1,10 @@
+import sys
+import os
 import requests
 import json
+
+# Add the src directory to the Python path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 from whatsapp_integration import WhatsAppBot
 
 def test_whatsapp_send():

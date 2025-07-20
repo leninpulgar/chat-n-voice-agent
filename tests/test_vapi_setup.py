@@ -5,8 +5,12 @@ This script tests the complete VAPI integration setup
 """
 
 import os
+import sys
 import json
 from dotenv import load_dotenv
+
+# Add the src directory to the Python path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 from vapi_integration import VAPIIntegration
 from pdf_processor import PDFProcessor
 
@@ -17,7 +21,7 @@ def test_vapi_setup():
     print("=" * 50)
     
     # Load environment variables
-    load_dotenv()
+    load_dotenv(os.path.join(os.path.dirname(__file__), '..', 'config', '.env'))
     
     # Check required environment variables
     required_vars = [
@@ -58,7 +62,7 @@ def test_vapi_setup():
     # Load business context
     print("\n📄 Loading Business Context...")
     try:
-        pdf_processor = PDFProcessor("business_info.pdf")
+        pdf_processor = PDFProcessor(os.path.join(os.path.dirname(__file__), '..', 'examples', 'business_info.pdf'))
         business_content = pdf_processor.extract_text()
         print(f"✅ Business context loaded ({len(business_content)} characters)")
     except Exception as e:
